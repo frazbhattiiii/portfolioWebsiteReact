@@ -32,7 +32,7 @@
       }
     }
     .items{
-      // display: flex;
+      display: flex;
       // flex-direction: row;
     
       .card{
@@ -45,11 +45,11 @@
       border-radius: 20px;
        border: 2px solid rgb(240, 239, 239);
        
-       margin: 1rem 6rem;
+       margin: 1rem;
        @include mobile{
         margin: 1rem 2rem;
-        height: 200px;
-        width: 300px;
+        height: auto;
+        width: 50%;
       }
        p{
         display: flex;
@@ -64,36 +64,26 @@
           
         }
       }
-      }
-      .imgContainer{
-        display: flex;
-        @include mobile{
-
-        }
+      }   
         img{
           height: 350px;
           width: 500px;
-          margin-left: 30rem;
+          
+          margin-left: 40rem;
+          // margin-top:  -25rem;
           @include mobile{
-            // height: 150px;
-            // width: 400px;
-            // margin-left: 0;
-            // cursor: pointer;
-            margin: .5rem 2rem;
-            // margin-top: .5rem;
-
-            height: 250px;
-            width: 600px;
-            scroll-behavior: smooth;
-            scroll-snap-type: y;
-            &::-webkit-scrollbar{
-              display: none;
-        
-            }
-          }
+           
+            display: none;
+          
          
         }
-      }
+        
+        }
+        a{
+          display: none;
+          
+      } 
+    
     }
   }
   .skills-area {

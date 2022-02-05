@@ -3,8 +3,25 @@ import PortfolioList
  from "../portfolioList/portfolioList";
 import "./portfolio.scss";
 import {webPortfolio,mobilePortfolio,designPortfolio,contentPortfolio, featuredPortfolio}
-from "../../data"
-
+from "../../data";
+// import CardActionArea from '@mui/material/CardActionArea';
+import { CardActionArea,Card,CardContent,CardMedia,Typography } from "@material-ui/core";
+import {
+	PricingSection,
+	PricingWrapper,
+	PricingContainer,
+	PricingCardInfo,
+	PricingCardPlan,
+	PricingCardCost,
+	PricingCardFeatures,
+	PricingCardText,
+	PricingCardFeature,
+	PricingCard,
+  PriceImageWrapper,
+  PriceImage,
+	priceButton,
+  
+} from './portfolioStyle';
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
@@ -46,7 +63,9 @@ export default function Portfolio() {
   }
  },[selected])
   return (
+        
     <div className="portfolio" id="Portfolio">
+    <div className="contaner">
       <h1>Portfolio</h1>
       <ul>
         {list.map((item) => (
@@ -58,19 +77,36 @@ export default function Portfolio() {
           />
         ))}
       </ul>
-      <div className="container">
-        {data.map((d)=>(
-           
-          <div className="item">
-            <img
-              src={d.img}
-              alt=""
-            />
-            <h3>{d.title}</h3>
-          </div>
-          ))}
+   
+    
+      <PricingWrapper>	
+					<PricingContainer>
+						{data.map((card) => (
+							<PricingCard key={card.id}>
+								<PricingCardInfo>
+                <PriceImageWrapper>
+										<PriceImage
+											src={card.img}
 
-      </div>
-    </div>
+
+										/>
+                    </PriceImageWrapper>
+                  
+									<PricingCardPlan>{card.title}</PricingCardPlan>
+                  
+									
+									<PricingCardText>{card.desc}</PricingCardText>
+
+								</PricingCardInfo>
+							</PricingCard>
+						))}
+					</PricingContainer>
+				</PricingWrapper>
+ 
+        </div>
+        </div>
+
+  
+
   );
 }
